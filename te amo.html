@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amo a victoria</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .centralizada {
+            width: 80vw;
+            max-width: 500px;
+            height: auto;
+            max-height: 90vh;
+            border-radius: 20px;
+            background-color: #d3d3d39a;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            overflow-y: auto;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 2;
+        }
+        
+        hr {
+            border: 0;
+            height: 5px;
+            background: #333;
+            margin: 20px 0;
+            width: 100%;
+            border-radius: 2px;
+        }
+
+        .texto-baixo {
+            margin: 15px 0;
+            line-height: 1.6;
+            font-size: 16px;
+            max-width: 100%;
+            word-wrap: break-word;
+            position: relative;
+        }
+
+        .emoji {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+            pointer-events: none;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+        }
+        
+        .button-container {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #ff00c8;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .centralizada {
+                width: 90vw;
+                padding: 10px;
+            }
+
+            .texto-baixo {
+                font-size: 14px;
+            }
+
+            .button-container button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="https://c.wallhere.com/photos/2e/ca/cloud_tree_cute_love_butterfly_happy_couple_heart-865608.jpg!d">
+    <div class="centralizada">
+        <hr>
+        <p class="texto-baixo">
+            quando eu te conheci, achei vc muito interessante por causa do jeito que cê reagiu quando te "zoei" ent decidi continuar conversando um pouco cntg, mas eu não queria levar nada adiante, muito menos ter uma amizade c vc pensei que só conversaríamos ali no tiktok e pronto. mas acabamos indo para o whatsapp e começamos a ficar mais ""próximos"" e conversando cada vez mais, e eu até então não sentia nada por vc, apenas achava seu jeitinho fofinho
+        </p>
+        <p class="texto-baixo">
+            só que um dia pensei em te ignorar e seguir minha vida, pq eu estava cansado de me envolver com pessoas. tava literalmente cansado msm e queria distância de todo mundo. só que decidi te dar uma "chance" e continuei conversando com você. e aos poucos, comecei a te achar não só fofinha, mas tbm uma garota muito legal, e eu queria ser seu amigo. ent, me esforcei mais para ficar com você, mesmo sem querer conversar com ninguém
+        </p>
+        <p class="texto-baixo">
+            e quando os dias foram passando, fui me aproximando mais e começando a gostar muito de você, mas não de forma romântica, apenas como amiga msm mas, com o tempo, meus sentimentos foram mudando. eu não queria mais ser apenas seu amigo eu queria algo a mais saca até te falei uns negócios que se pá você nem tinha notado, mas quando fomos no rave assistir videos, acabei falando uns negócios pra vc e você demonstrou que tbm gostava de mim. fiquei mó feliz quando você disse que eu preenchia algo que nunca foi preenchido antes
+        </p>
+        <p class="texto-baixo">
+            depois desse dia, ficamos ainda mais próximos e eu não conseguia parar de pensar em você e até hoje, você ta na minha mente o tempo todo quando vou dormir, quando acordo, o dia inteiro. oque eu sinto por você só aumenta a cada dia que passa. lembra daquele dia em que você disse que me amava e eu respondi "acho que também te amo"? não acho mais que te amo eu tenho total certeza do que sinto por você. eu te amo mais do que tudo nesse mundo amor
+        </p>
+        <p class="texto-baixo">
+            escolhi você para passar o resto da minha vida e espero que você tenha as mesmas intenções. victória, quero estar com vc para sempre, te proteger de qualquer mal, pq você é a pessoa mais importante da minha vida. sei que nos conhecemos faz pouco tempo, mas já não consigo imaginar minha vida sem você. todas as promessas que fiz a você, pode ter certeza, vou cumprir. um dia, vamos nos casar, ter filhinhos e viver uma vida feliz e tranquila juntos, até envelhecermos
+        </p>
+        <p class="texto-baixo">
+            eu queria ser melhor em me expressar com palavras, mas é difícil descrever o que sinto por você. amor, você é tudo que eu sempre quis. eu te amo muito, muito mais do que você consegue imaginar
+        </p>
+        <div class="button-container">
+            <button onclick="redirectToVideo()">clique aqui</button>
+        </div>
+    </div>
+
+    <script>
+        function getRandomPosition() {
+            const container = document.querySelector('.centralizada');
+            const containerRect = container.getBoundingClientRect();
+            const x = containerRect.width - 50;
+            const y = containerRect.height - 50;
+            const randomX = Math.floor(Math.random() * x);
+            const randomY = Math.floor(Math.random() * y);
+            return { x: randomX, y: randomY };
+        }
+
+        function createEmoji() {
+            const emoji = document.createElement('div');
+            emoji.className = 'emoji';
+            emoji.textContent = '❤️';
+            return emoji;
+        }
+
+        function displayEmoji() {
+            const existingEmoji = document.querySelector('.emoji');
+            if (existingEmoji) {
+                existingEmoji.style.opacity = 0;
+                setTimeout(() => existingEmoji.remove(), 500); 
+            }
+
+            const emoji = createEmoji();
+            const { x, y } = getRandomPosition();
+            emoji.style.left = `${x}px`;
+            emoji.style.top = `${y}px`;
+            document.querySelector('.centralizada').appendChild(emoji);
+
+            setTimeout(() => {
+                emoji.style.opacity = 1;
+            }, 0);
+        }
+
+        setInterval(displayEmoji, 1000);
+
+        function redirectToVideo() {
+            window.location.href = 'https://www.youtube.com/watch?v=qJqtcoAJ6ZY';
+        }
+    </script>
+</body>
+</html>
